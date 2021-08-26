@@ -1,0 +1,24 @@
+cw_django_questions_dr
+
+Por el corto tiempo disponible, se decidió dar enfásis a la performance en Base de Datos, 
+evitando la sobrecarga de procesamiento en código Python
+
+Se debe ejecutar los siguientes triggers en la Base de Datos:
+
+trigger_insert_survey_answer.sql
+trigger_update_survey_answer.sql
+
+Cuando ocurre un INSERT o UPDATE en la respueta "survey_answer", se genera el Cálculo del Rating por medio de los Triggers.
+
+En ambos Triggers se indica solo mostrar los 4 primeros registros, Por ende se podrían actualizar a mostrar los 20 primeros registros.
+
+Como se labora con SQLite3 y no se dispone de SP Store Procedures, se duplicó el código para ambos Triggers.
+En otra Base de Datos los Triggers llamarían a un único SP Store Procedure.
+
+El código en Python se generó rápido; Asimismo no está funcionalmente completo.
+Más fue la demora en afinar el código en Base de Datos 
+(por las continuas restricciones que impone Django en su sintáxis de SCHEMAS en los Updates de los Triggers)
+Así todo el cálculo recaé en el código en Base de Datos (pensando en la escalabilidad).
+Así Python Django solo se dedica a leer y mostrar los resultados.
+
+question_ranking.png
