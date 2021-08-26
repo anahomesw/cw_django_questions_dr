@@ -39,3 +39,10 @@ ranking: `6*10 + 2*5 - 1*3 + 10 = 60 + 10 - 3 +10 = 77`
 Este es un ejemplo de como queda el listado con su ranking y se ve como respondió/votó el usuario actual.
 
 ![Example](example.png)
+
+### 
+
+### Leeme
+Leer el archivo leeme
+
+![Example](question_ranking.png)
